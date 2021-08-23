@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "es5",           
+    "module": "esnext",        
+    "jsx": "react-jsx",
+    "skipLibCheck": true,       
+    "noImplicitAny": true,     
+    "lib": ["dom", "dom.Iterable", "esnext"],
+    "esModuleInterop": true,                       
+    "strict": true,                                
+    "forceConsistentCasingInFileNames": true,      
+    "moduleResolution": "node",                    
+    "isolatedModules": true,                       
+    "allowJs": true,
+    "baseUrl": ".",
+    "paths": {
+      "@src/*": ["src/*"],
+      "@public/*": ["public/*"]
+    }                      
+  },
+  "exclude": ["node_modules/", "webpack.config.js"]
+}
