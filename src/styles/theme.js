@@ -1,3 +1,5 @@
+import { createTheme } from '@material-ui/core';
+
 const paddings = {
   sidePadding: '5rem',
 };
@@ -5,6 +7,7 @@ const paddings = {
 const colors = {
   bg: '#FFFEFA',
   grayPrimary: '#AAAAAA',
+  grayButton: '#FBFBFB',
   greenPrimary: '#1D8170',
   grayProgressBar: '#222222',
 };
@@ -17,10 +20,10 @@ const fontSizes = {
   xxl: '36px',
 };
 
-const theme = {
+const theme = createTheme({
   paddings,
   colors,
   fontSizes,
-};
+});
 
 export default theme;
