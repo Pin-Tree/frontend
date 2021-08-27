@@ -15,10 +15,8 @@ function MainHeader() {
 export default MainHeader;
 
 const MainHeaderWrap = styled.header`
-  padding: 0.5rem ${({ theme }) => theme.paddings.sidePadding};
   display: flex;
   justify-content: space-between;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grayPrimary};
 `;
 
 const MenuWrap = styled.div`
