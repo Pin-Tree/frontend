@@ -11,40 +11,49 @@ const useStyles = makeStyles({
   },
 });
 
-function MainBody() {
+function TreeHeader() {
   const classes = useStyles();
 
   return (
-    <MainbodyWrap>
-      <TreeInformation>
-        <h2>Front-End</h2>
-        <ProgressContainer>
-          <LinearProgress
-            variant={'determinate'}
-            value={40}
-            classes={{
-              root: classes.root,
-            }}
-          />
-          <span>45%</span>
-        </ProgressContainer>
-      </TreeInformation>
-      <Buttons>
-        <button>공유</button>
-        <button>편집</button>
-      </Buttons>
-    </MainbodyWrap>
+    <PaddingWrap>
+      <TreeHeaderWrap>
+        <TreeInfo>
+          <h2>Front-End</h2>
+          <ProgressContainer>
+            <LinearProgress
+              variant={'determinate'}
+              value={40}
+              classes={{
+                root: classes.root,
+              }}
+            />
+            <span>45%</span>
+          </ProgressContainer>
+        </TreeInfo>
+        <Buttons>
+          <button>공유</button>
+          <button>편집</button>
+        </Buttons>
+      </TreeHeaderWrap>
+    </PaddingWrap>
   );
 }
 
-export default MainBody;
+export default TreeHeader;
 
-const MainbodyWrap = styled.section`
+const PaddingWrap = styled.div`
+  margin: 0 auto;
+  max-width: 1760px;
+  padding: 0 5rem;
+`;
+
+const TreeHeaderWrap = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding-top: 4rem;
-  height: 8rem;
+  height: 10rem;
+  position: relative;
 `;
 
 const ProgressContainer = styled.div`
@@ -53,7 +62,7 @@ const ProgressContainer = styled.div`
   align-items: center;
 `;
 
-const TreeInformation = styled.div`
+const TreeInfo = styled.div`
   display: flex;
   flex-direction: column;
 
@@ -68,9 +77,9 @@ const TreeInformation = styled.div`
 `;
 
 const Buttons = styled.div`
-  display: flex;
-  align-items: flex-end;
-  height: 100%;
+  position: absolute;
+  right: 0;
+  bottom: 1.5rem;
 
   button {
     margin-left: 2rem;

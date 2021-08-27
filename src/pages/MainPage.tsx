@@ -1,4 +1,4 @@
-import Main from '@src/components/Main';
+import Main from '@src/components/main/Main';
 
 function MainPage() {
   return <Main />;

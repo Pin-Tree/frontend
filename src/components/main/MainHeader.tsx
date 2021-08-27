@@ -15,6 +15,9 @@ function MainHeader() {
 export default MainHeader;
 
 const MainHeaderWrap = styled.header`
+  margin: 0 auto;
+  max-width: 1760px;
+  padding: 0.5rem ${({ theme }) => theme.paddings.sidePadding};
   display: flex;
   justify-content: space-between;
 `;
