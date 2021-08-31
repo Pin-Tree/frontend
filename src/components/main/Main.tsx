@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import MainHeader from './MainHeader';
+import GuideTree from './tree/GuideTree';
 import TreeHeader from './tree/TreeHeader';
 
 function Main() {
@@ -11,6 +12,7 @@ function Main() {
       <Wrap>
         <TreeHeader />
       </Wrap>
+      <GuideTree />
     </>
   );
 }
