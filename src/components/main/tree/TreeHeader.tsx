@@ -43,7 +43,7 @@ export default TreeHeader;
 
 const PaddingWrap = styled.div`
   margin: 0 auto;
-  max-width: 1760px;
+  max-width: ${({ theme }) => theme.serviceWidth.default};
   padding: 0 5rem;
 `;
 

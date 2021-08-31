@@ -16,7 +16,7 @@ export default MainHeader;
 
 const MainHeaderWrap = styled.header`
   margin: 0 auto;
-  max-width: 1760px;
+  max-width: ${({ theme }) => theme.serviceWidth.default};
   padding: 0.5rem ${({ theme }) => theme.paddings.sidePadding};
   display: flex;
   justify-content: space-between;
