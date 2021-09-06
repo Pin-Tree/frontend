@@ -1,10 +1,30 @@
 import styled from 'styled-components';
+import { useRef, WheelEvent } from 'react';
+
 import Node from './Node';
 
 function GuideTree() {
+  const wheelX = useRef<HTMLDivElement | null>(null);
+
+  const handleMouseWheel = (e: WheelEvent) => {
+    if (!wheelX.current) return;
+    const movement = 500;
+    const isWheelDown = e.deltaY > 0 ? true : false;
+    const currentWheel = wheelX.current;
+
+    if (!isWheelDown) {
+      if (currentWheel.scrollLeft === 0) return;
+      currentWheel.scrollLeft -= movement;
+    }
+
+    if (isWheelDown) {
+      currentWheel.scrollLeft += movement;
+    }
+  };
+
   return (
     <TreeWrap>
-      <TreeContainer>
+      <TreeContainer onWheel={handleMouseWheel} ref={wheelX}>
         <Node />
         <Node />
         <Node />
