@@ -20,6 +20,7 @@ const colors = {
   grayPrimary: '#AAAAAA',
   graySecondary: '#777777',
   grayButton: '#FBFBFB',
+  grayActionBtn: '#818181',
   blackPrimary: '#000000',
   greenPrimary: '#1D8170',
   grayProgressBar: '#222222',
@@ -42,6 +43,13 @@ const borderRadius = {
   l: '18px',
 };
 
+const actionBtnPos = {
+  plus: 'right: -30%; top: -75%;',
+  edit: 'right: 10%; top: -90%;',
+  cancel: 'right: -40%;',
+  check: 'left: -40%;',
+};
+
 const theme = createTheme({
   serviceWidth,
   paddings,
@@ -49,6 +57,7 @@ const theme = createTheme({
   fontSizes,
   borderRadius,
   flexCenter,
+  actionBtnPos,
 });
 
 export default theme;
