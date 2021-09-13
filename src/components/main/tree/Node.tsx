@@ -1,25 +1,16 @@
 import styled from 'styled-components';
 import CenterNode from './CenterNode';
+import ChildNode from './ChildNode';
 
 function Node() {
   return (
     <NodeWrap>
       <UpBranch>
-        <BranchNode>What is HTTP?</BranchNode>
-        <BranchNode>What is HTTP?</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>블라브라</BranchNode>
+        <ChildNode nodeText={'http balh'} />
       </UpBranch>
       <CenterNode />
       <DownBranch>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>이거는 머시기 머시기</BranchNode>
-        <BranchNode>이거는 머시기 머시기</BranchNode>
-        <BranchNode>이거는 머시기 머시기</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>블라브라</BranchNode>
+        <ChildNode nodeText={'http balh'} />
       </DownBranch>
     </NodeWrap>
   );
@@ -59,22 +50,4 @@ const UpBranch = styled(Branch)`
 const DownBranch = styled(Branch)`
   flex-direction: column;
   top: 5rem;
-`;
-
-const BranchNode = styled.div`
-  margin: 0.5rem 0;
-  padding: 0.5rem 1rem;
-  width: max-content;
-  background-color: ${({ theme }) => theme.colors.branchNode};
-  position: relative;
-
-  &::before {
-    content: '';
-    height: 100%;
-    width: 0.2rem;
-    background-color: ${({ theme }) => theme.colors.graySecondary};
-    top: 0;
-    left: 0;
-    position: absolute;
-  }
 `;
