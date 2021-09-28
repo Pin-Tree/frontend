@@ -1,26 +1,27 @@
 import styled from 'styled-components';
 import CenterNode from './CenterNode';
+import ChildNode from './ChildNode';
 
 function Node() {
   return (
     <NodeWrap>
-      <UpBranch>
-        <BranchNode>What is HTTP?</BranchNode>
-        <BranchNode>What is HTTP?</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-      </UpBranch>
-      <CenterNode />
-      <DownBranch>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>이거는 머시기 머시기</BranchNode>
-        <BranchNode>이거는 머시기 머시기</BranchNode>
-        <BranchNode>이거는 머시기 머시기</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-        <BranchNode>블라브라</BranchNode>
-      </DownBranch>
+      <NodeContainer>
+        <UpBranchBox>
+          <UpBranch>
+            <ChildNode nodeText={'http balh'} />
+            <ChildNode nodeText={'asdfasdfasdfasdfasfasasdfasfasfasfasdf'} />
+            <ChildNode nodeText={'asdfasdfsadfsadafsadfsafas'} />
+            <ChildNode nodeText={'asdf'} />
+          </UpBranch>
+        </UpBranchBox>
+        <CenterNode />
+        <DownBranchBox>
+          <DownBranch>
+            <ChildNode nodeText={'http balh'} />
+            <ChildNode nodeText={'asdfasdfasdfasdfasfasasdfasfasfasfasdf'} />
+          </DownBranch>
+        </DownBranchBox>
+      </NodeContainer>
     </NodeWrap>
   );
 }
@@ -28,53 +29,47 @@ function Node() {
 export default Node;
 
 const NodeWrap = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-left: 2rem;
   position: relative;
-
-  &:not(:first-child) {
-    margin-left: 12rem;
-  }
 `;
 
-const Branch = styled.div`
+const NodeContainer = styled.div`
+  height: 100%;
+  min-width: 25rem;
   display: flex;
-  flex-wrap: wrap;
-  padding-right: 2rem;
-  width: auto;
-  height: 12rem;
-  transform: translateX(60%);
-  background-color: transparent;
+  align-items: center;
+  position: relative;
+`;
+
+const BranchBox = styled.div`
+  width: 100%;
+  height: 50%;
   position: absolute;
 `;
 
+const UpBranchBox = styled(BranchBox)`
+  display: flex;
+  flex-direction: column-reverse;
+  top: 0;
+  border-bottom: 1px solid ${({ theme }) => theme.colors.grayPrimary};
+`;
+
+const DownBranchBox = styled(BranchBox)`
+  bottom: 0;
+  border-top: 1px solid ${({ theme }) => theme.colors.grayPrimary};
+`;
+
+const Branch = styled.div`
+  transform: translateX(25%);
+`;
+
 const UpBranch = styled(Branch)`
-  flex-direction: column;
-  justify-content: flex-end;
-  bottom: 5rem;
+  margin-bottom: 2rem;
 `;
 const DownBranch = styled(Branch)`
-  flex-direction: column;
-  top: 5rem;
-`;
-
-const BranchNode = styled.div`
-  margin: 0.5rem 0;
-  padding: 0.5rem 1rem;
-  width: max-content;
-  background-color: ${({ theme }) => theme.colors.branchNode};
-  position: relative;
-
-  &::before {
-    content: '';
-    height: 100%;
-    width: 0.2rem;
-    background-color: ${({ theme }) => theme.colors.graySecondary};
-    top: 0;
-    left: 0;
-    position: absolute;
-  }
+  margin-top: 2rem;
 `;
