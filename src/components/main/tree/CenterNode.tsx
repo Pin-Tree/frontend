@@ -31,7 +31,6 @@ const NodeWrap = styled.div`
   background-color: ${({ theme }) => theme.colors.greenPrimary};
   color: ${({ theme }) => theme.colors.centerNode};
   border-radius: ${({ theme }) => theme.borderRadius.base};
-  top: 50%;
   z-index: 1;
   position: relative;
 `;
