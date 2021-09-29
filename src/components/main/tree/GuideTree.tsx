@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { useRef, WheelEvent } from 'react';
 
 import Node from './Node';
+import NodeDetailInfo from '../detail/NodeDetailInfo';
 
 function GuideTree() {
   const wheelX = useRef<HTMLDivElement | null>(null);
@@ -32,6 +33,7 @@ function GuideTree() {
         <Node />
         <Node />
       </TreeContainer>
+      <NodeDetailInfo />
     </TreeWrap>
   );
 }
@@ -43,6 +45,7 @@ const TreeWrap = styled.section`
   padding: 0.7rem 5rem;
   height: 70%;
   max-width: ${({ theme }) => theme.serviceWidth.default};
+  position: relative;
 `;
 
 const TreeContainer = styled.div`
