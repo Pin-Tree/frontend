@@ -26,6 +26,7 @@ const colors = {
   grayProgressBar: '#222222',
   centerNode: '#F7F6F0',
   branchNode: '#F5F4EE',
+  yellowPrimary: '#F6F5EE',
 };
 
 const fontSizes = {
